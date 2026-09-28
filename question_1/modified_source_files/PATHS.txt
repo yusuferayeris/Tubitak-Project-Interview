@@ -1,0 +1,54 @@
+       └──layer1_foundations/
+
+       │   └── combinatorics/
+
+       │       └── graph_theory/
+
+       │           ├── graph_theory_domain.cpp
+
+       │           │   Original Orbiter path:
+
+       │           │   orbiter/src/lib/layer1_foundations/combinatorics/graph_theory/graph_theory_domain.cpp
+
+       │           │
+
+       │           └── graph_theory_domain.h
+
+       │               Original Orbiter path:
+
+       │               orbiter/src/lib/layer1_foundations/combinatorics/graph_theory/graph_theory_domain.h
+
+       │
+
+       └── layer5_top_level/
+
+           └── apps_graph_theory/
+
+               ├── create_graph.cpp
+
+               │   Original Orbiter path:
+
+               │   orbiter/src/lib/layer5_top_level/apps_graph_theory/create_graph.cpp
+
+               │
+
+               ├── create_graph.h
+
+               │   Original Orbiter path:
+
+               │   orbiter/src/lib/layer5_top_level/apps_graph_theory/create_graph.h
+
+               │
+
+               ├── create_graph_description.cpp
+               │   Original Orbiter path:
+
+               │   orbiter/src/lib/layer5_top_level/apps_graph_theory/create_graph_description.cpp
+
+               │
+
+               └── create_graph_description.h
+
+                   Original Orbiter path:
+
+                  orbiter/src/lib/layer5_top_level/apps_graph_theory/create_graph_description.h

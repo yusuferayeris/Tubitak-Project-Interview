@@ -1,0 +1,846 @@
+\documentclass[12pt]{article}
+% a4paper
+
+%\usepackage[dvips]{epsfig}
+%\usepackage{cours11, cours}
+%\usepackage{fancyheadings}
+%\usepackage{calc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{latexsym}
+\usepackage{epsfig}
+\usepackage{enumerate}
+%\usepackage{supertabular}
+%\usepackage{wrapfig}
+%\usepackage{blackbrd}
+%\usepackage{epic,eepic}
+\usepackage{rotating}
+\usepackage{multicol}
+%\usepackage{multirow}
+\usepackage{makeidx} % additional command see
+\usepackage{rotating}
+\usepackage{array}
+\usepackage{tikz}
+\usepackage{longtable}
+%\usepackage{anyfontsize}
+\usepackage{t1enc}
+%\usepackage{amsmath,amsfonts}
+
+
+%\usepackage[mtbold,mtplusscr]{mathtime}
+% lucidacal,lucidascr,
+
+%\usepackage{mathtimy}
+%\usepackage{bm}
+%\usepackage{avant}
+%\usepackage{basker}
+%\usepackage{bembo}
+%\usepackage{bookman}
+%\usepackage{chancery}
+%\usepackage{garamond}
+%\usepackage{helvet}
+%\usepackage{newcent}
+%\usepackage{palatino}
+%\usepackage{times}
+%\usepackage{pifont}
+
+
+
+%\parindent=0pt
+
+
+%\topmargin=0pt
+%\headsep=18pt
+%\footskip=45pt
+%\mathsurround=1pt
+%\evensidemargin=0pt
+%\oddsidemargin=15pt
+
+%\setlength{\textheight}{\baselineskip*41+\topskip}
+
+\newcommand{\sectionline}{
+   \nointerlineskip \vspace{\baselineskip}
+   \hspace{\fill}\rule{0.9\linewidth}{1.7pt}\hspace{\fill}
+   \par\nointerlineskip \vspace{\baselineskip}
+   }
+\newcommand\setTBstruts{\def\T{\rule{0pt}{2.6ex}}%
+\def\B{\rule[-1.2ex]{0pt}{0pt}}}
+\newcommand{\ans}[1]{\\{\bf ANSWER}: {#1}}
+\newcommand{\Aut}{{\rm Aut}}
+\newcommand{\Sym}{{\rm Sym}}
+\newcommand{\sFix}{{\cal Fix}}
+\newcommand{\sOrbits}{{\cal Orbits}}
+\newcommand{\Stab}{{\rm Stab}}
+\newcommand{\Fix}{{\rm Fix}}
+\newcommand{\fix}{{\rm fix}}
+\newcommand{\Orbits}{{\rm Orbits}}
+\newcommand{\PG}{{\rm PG}}
+\newcommand{\AG}{{\rm AG}}
+\newcommand{\SQS}{{\rm SQS}}
+\newcommand{\STS}{{\rm STS}}
+\newcommand{\PSL}{{\rm PSL}}
+\newcommand{\PGL}{{\rm PGL}}
+\newcommand{\PSSL}{{\rm P\Sigma L}}
+\newcommand{\PGGL}{{\rm P\Gamma L}}
+\newcommand{\SL}{{\rm SL}}
+\newcommand{\GL}{{\rm GL}}
+\newcommand{\SSL}{{\rm \Sigma L}}
+\newcommand{\GGL}{{\rm \Gamma L}}
+\newcommand{\ASL}{{\rm ASL}}
+\newcommand{\AGL}{{\rm AGL}}
+\newcommand{\ASSL}{{\rm A\Sigma L}}
+\newcommand{\AGGL}{{\rm A\Gamma L}}
+\newcommand{\PSU}{{\rm PSU}}
+\newcommand{\HS}{{\rm HS}}
+\newcommand{\Hol}{{\rm Hol}}
+\newcommand{\SO}{{\rm SO}}
+\newcommand{\ASO}{{\rm ASO}}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\newcommand{\cA}{{\cal A}}
+\newcommand{\cB}{{\cal B}}
+\newcommand{\cC}{{\cal C}}
+\newcommand{\cD}{{\cal D}}
+\newcommand{\cE}{{\cal E}}
+\newcommand{\cF}{{\cal F}}
+\newcommand{\cG}{{\cal G}}
+\newcommand{\cH}{{\cal H}}
+\newcommand{\cI}{{\cal I}}
+\newcommand{\cJ}{{\cal J}}
+\newcommand{\cK}{{\cal K}}
+\newcommand{\cL}{{\cal L}}
+\newcommand{\cM}{{\cal M}}
+\newcommand{\cN}{{\cal N}}
+\newcommand{\cO}{{\cal O}}
+\newcommand{\cP}{{\cal P}}
+\newcommand{\cQ}{{\cal Q}}
+\newcommand{\cR}{{\cal R}}
+\newcommand{\cS}{{\cal S}}
+\newcommand{\cT}{{\cal T}}
+\newcommand{\cU}{{\cal U}}
+\newcommand{\cV}{{\cal V}}
+\newcommand{\cW}{{\cal W}}
+\newcommand{\cX}{{\cal X}}
+\newcommand{\cY}{{\cal Y}}
+\newcommand{\cZ}{{\cal Z}}
+\newcommand{\rmA}{{\rm A}}
+\newcommand{\rmB}{{\rm B}}
+\newcommand{\rmC}{{\rm C}}
+\newcommand{\rmD}{{\rm D}}
+\newcommand{\rmE}{{\rm E}}
+\newcommand{\rmF}{{\rm F}}
+\newcommand{\rmG}{{\rm G}}
+\newcommand{\rmH}{{\rm H}}
+\newcommand{\rmI}{{\rm I}}
+\newcommand{\rmJ}{{\rm J}}
+\newcommand{\rmK}{{\rm K}}
+\newcommand{\rmL}{{\rm L}}
+\newcommand{\rmM}{{\rm M}}
+\newcommand{\rmN}{{\rm N}}
+\newcommand{\rmO}{{\rm O}}
+\newcommand{\rmP}{{\rm P}}
+\newcommand{\rmQ}{{\rm Q}}
+\newcommand{\rmR}{{\rm R}}
+\newcommand{\rmS}{{\rm S}}
+\newcommand{\rmT}{{\rm T}}
+\newcommand{\rmU}{{\rm U}}
+\newcommand{\rmV}{{\rm V}}
+\newcommand{\rmW}{{\rm W}}
+\newcommand{\rmX}{{\rm X}}
+\newcommand{\rmY}{{\rm Y}}
+\newcommand{\rmZ}{{\rm Z}}
+\newcommand{\bA}{{\bf A}}
+\newcommand{\bB}{{\bf B}}
+\newcommand{\bC}{{\bf C}}
+\newcommand{\bD}{{\bf D}}
+\newcommand{\bE}{{\bf E}}
+\newcommand{\bF}{{\bf F}}
+\newcommand{\bG}{{\bf G}}
+\newcommand{\bH}{{\bf H}}
+\newcommand{\bI}{{\bf I}}
+\newcommand{\bJ}{{\bf J}}
+\newcommand{\bK}{{\bf K}}
+\newcommand{\bL}{{\bf L}}
+\newcommand{\bM}{{\bf M}}
+\newcommand{\bN}{{\bf N}}
+\newcommand{\bO}{{\bf O}}
+\newcommand{\bP}{{\bf P}}
+\newcommand{\bQ}{{\bf Q}}
+\newcommand{\bR}{{\bf R}}
+\newcommand{\bS}{{\bf S}}
+\newcommand{\bT}{{\bf T}}
+\newcommand{\bU}{{\bf U}}
+\newcommand{\bV}{{\bf V}}
+\newcommand{\bW}{{\bf W}}
+\newcommand{\bX}{{\bf X}}
+\newcommand{\bY}{{\bf Y}}
+\newcommand{\bZ}{{\bf Z}}
+\newcommand{\sA}{{\cal A}}
+\newcommand{\sB}{{\cal B}}
+\newcommand{\sC}{{\cal C}}
+\newcommand{\sD}{{\cal D}}
+\newcommand{\sE}{{\cal E}}
+\newcommand{\sF}{{\cal F}}
+\newcommand{\sG}{{\cal G}}
+\newcommand{\sH}{{\cal H}}
+\newcommand{\sI}{{\cal I}}
+\newcommand{\sJ}{{\cal J}}
+\newcommand{\sK}{{\cal K}}
+\newcommand{\sL}{{\cal L}}
+\newcommand{\sM}{{\cal M}}
+\newcommand{\sN}{{\cal N}}
+\newcommand{\sO}{{\cal O}}
+\newcommand{\sP}{{\cal P}}
+\newcommand{\sQ}{{\cal Q}}
+\newcommand{\sR}{{\cal R}}
+\newcommand{\sS}{{\cal S}}
+\newcommand{\sT}{{\cal T}}
+\newcommand{\sU}{{\cal U}}
+\newcommand{\sV}{{\cal V}}
+\newcommand{\sW}{{\cal W}}
+\newcommand{\sX}{{\cal X}}
+\newcommand{\sY}{{\cal Y}}
+\newcommand{\sZ}{{\cal Z}}
+\newcommand{\frakA}{{\mathfrak A}}
+\newcommand{\frakB}{{\mathfrak B}}
+\newcommand{\frakC}{{\mathfrak C}}
+\newcommand{\frakD}{{\mathfrak D}}
+\newcommand{\frakE}{{\mathfrak E}}
+\newcommand{\frakF}{{\mathfrak F}}
+\newcommand{\frakG}{{\mathfrak G}}
+\newcommand{\frakH}{{\mathfrak H}}
+\newcommand{\frakI}{{\mathfrak I}}
+\newcommand{\frakJ}{{\mathfrak J}}
+\newcommand{\frakK}{{\mathfrak K}}
+\newcommand{\frakL}{{\mathfrak L}}
+\newcommand{\frakM}{{\mathfrak M}}
+\newcommand{\frakN}{{\mathfrak N}}
+\newcommand{\frakO}{{\mathfrak O}}
+\newcommand{\frakP}{{\mathfrak P}}
+\newcommand{\frakQ}{{\mathfrak Q}}
+\newcommand{\frakR}{{\mathfrak R}}
+\newcommand{\frakS}{{\mathfrak S}}
+\newcommand{\frakT}{{\mathfrak T}}
+\newcommand{\frakU}{{\mathfrak U}}
+\newcommand{\frakV}{{\mathfrak V}}
+\newcommand{\frakW}{{\mathfrak W}}
+\newcommand{\frakX}{{\mathfrak X}}
+\newcommand{\frakY}{{\mathfrak Y}}
+\newcommand{\frakZ}{{\mathfrak Z}}
+\newcommand{\fraka}{{\mathfrak a}}
+\newcommand{\frakb}{{\mathfrak b}}
+\newcommand{\frakc}{{\mathfrak c}}
+\newcommand{\frakd}{{\mathfrak d}}
+\newcommand{\frake}{{\mathfrak e}}
+\newcommand{\frakf}{{\mathfrak f}}
+\newcommand{\frakg}{{\mathfrak g}}
+\newcommand{\frakh}{{\mathfrak h}}
+\newcommand{\fraki}{{\mathfrak i}}
+\newcommand{\frakj}{{\mathfrak j}}
+\newcommand{\frakk}{{\mathfrak k}}
+\newcommand{\frakl}{{\mathfrak l}}
+\newcommand{\frakm}{{\mathfrak m}}
+\newcommand{\frakn}{{\mathfrak n}}
+\newcommand{\frako}{{\mathfrak o}}
+\newcommand{\frakp}{{\mathfrak p}}
+\newcommand{\frakq}{{\mathfrak q}}
+\newcommand{\frakr}{{\mathfrak r}}
+\newcommand{\fraks}{{\mathfrak s}}
+\newcommand{\frakt}{{\mathfrak t}}
+\newcommand{\fraku}{{\mathfrak u}}
+\newcommand{\frakv}{{\mathfrak v}}
+\newcommand{\frakw}{{\mathfrak w}}
+\newcommand{\frakx}{{\mathfrak x}}
+\newcommand{\fraky}{{\mathfrak y}}
+\newcommand{\frakz}{{\mathfrak z}}
+\newcommand{\Tetra}{{\mathfrak Tetra}}
+\newcommand{\Cube}{{\mathfrak Cube}}
+\newcommand{\Octa}{{\mathfrak Octa}}
+\newcommand{\Dode}{{\mathfrak Dode}}
+\newcommand{\Ico}{{\mathfrak Ico}}
+\newcommand{\bbF}{{\mathbb F}}
+\newcommand{\bbQ}{{\mathbb Q}}
+\newcommand{\bbC}{{\mathbb C}}
+\newcommand{\bbR}{{\mathbb R}}
+
+
+
+%\makeindex
+
+\begin{document} 
+\setTBstruts
+
+\bibliographystyle{plain}
+%\large
+
+{\allowdisplaybreaks%
+
+
+
+
+%\makeindex
+
+%\renewcommand{\labelenumi}{(\roman{enumi})}
+
+\title{Eigenvalues of graph}
+\author{}%end author
+%\date{}
+\maketitle%
+%\pagenumbering{roman}
+%\thispagestyle{empty}
+%\input et.tex%
+%\thispagestyle{empty}%\phantom{page2}%\clearpage%
+%\addcontentsline{toc}{chapter}{Inhaltsverzeichnis}%
+%\tableofcontents
+%\listofsymbols
+%\pagenumbering{arabic}
+%\pagenumbering{roman}
+
+
+
+$$
+\begin{array}{|r|r|}
+\hline
+ i  & \lambda_i  \\
+\hline
+\hline
+0 & 16.1704\\
+\hline
+1 & 11.5175\\
+\hline
+2 & 9.27438\\
+\hline
+3 & 8.09837\\
+\hline
+4 & 6.5964\\
+\hline
+5 & 6.42559\\
+\hline
+6 & 6.09561\\
+\hline
+7 & 5.55777\\
+\hline
+8 & 4.45413\\
+\hline
+9 & 4.41364\\
+\hline
+10 & 4.35413\\
+\hline
+11 & 4.29016\\
+\hline
+12 & 4.08396\\
+\hline
+13 & 4.04268\\
+\hline
+14 & 3.93482\\
+\hline
+15 & 3.64272\\
+\hline
+16 & 2.7868\\
+\hline
+17 & 2.77689\\
+\hline
+18 & 2.76273\\
+\hline
+19 & 2.74922\\
+\hline
+20 & 2.7118\\
+\hline
+21 & 2.706\\
+\hline
+22 & 2.69158\\
+\hline
+23 & 2.66021\\
+\hline
+24 & 2.50915\\
+\hline
+25 & 2.50096\\
+\hline
+26 & 2.48717\\
+\hline
+27 & 2.47141\\
+\hline
+28 & 2.40427\\
+\hline
+29 & 2.38949\\
+\hline
+30 & 2.34331\\
+\hline
+31 & 2.17009\\
+\hline
+32 & 1.46867\\
+\hline
+33 & 1.46678\\
+\hline
+34 & 1.4638\\
+\hline
+35 & 1.46107\\
+\hline
+36 & 1.45294\\
+\hline
+37 & 1.45188\\
+\hline
+38 & 1.44902\\
+\hline
+39 & 1.44319\\
+\hline
+40 & 1.41686\\
+\hline
+41 & 1.41588\\
+\hline
+42 & 1.41409\\
+\hline
+43 & 1.41214\\
+\hline
+44 & 1.40348\\
+\hline
+45 & 1.40187\\
+\hline
+46 & 1.39667\\
+\hline
+47 & 1.37993\\
+\hline
+48 & 1.25924\\
+\hline
+49 & 1.25768\\
+\hline
+50 & 1.25503\\
+\hline
+51 & 1.25248\\
+\hline
+52 & 1.24386\\
+\hline
+53 & 1.24267\\
+\hline
+54 & 1.23927\\
+\hline
+55 & 1.23176\\
+\hline
+56 & 1.1807\\
+\hline
+57 & 1.17824\\
+\hline
+58 & 1.17344\\
+\hline
+59 & 1.16796\\
+\hline
+60 & 1.13832\\
+\hline
+61 & 1.13216\\
+\hline
+62 & 1.10914\\
+\hline
+63 & 1\\
+\hline
+64 & 0.365977\\
+\hline
+65 & 0.365832\\
+\hline
+66 & 0.365529\\
+\hline
+67 & 0.365251\\
+\hline
+68 & 0.36415\\
+\hline
+69 & 0.364038\\
+\hline
+70 & 0.363664\\
+\hline
+71 & 0.362917\\
+\hline
+72 & 0.35855\\
+\hline
+73 & 0.358454\\
+\hline
+74 & 0.358232\\
+\hline
+75 & 0.357999\\
+\hline
+76 & 0.356658\\
+\hline
+77 & 0.356467\\
+\hline
+78 & 0.355711\\
+\hline
+79 & 0.353389\\
+\hline
+80 & 0.334772\\
+\hline
+81 & 0.334673\\
+\hline
+82 & 0.334459\\
+\hline
+83 & 0.334255\\
+\hline
+84 & 0.333377\\
+\hline
+85 & 0.333283\\
+\hline
+86 & 0.332955\\
+\hline
+87 & 0.332257\\
+\hline
+88 & 0.326403\\
+\hline
+89 & 0.326232\\
+\hline
+90 & 0.325823\\
+\hline
+91 & 0.325377\\
+\hline
+92 & 0.322401\\
+\hline
+93 & 0.321925\\
+\hline
+94 & 0.319839\\
+\hline
+95 & 0.311108\\
+\hline
+96 & 0.203325\\
+\hline
+97 & 0.203195\\
+\hline
+98 & 0.202899\\
+\hline
+99 & 0.202623\\
+\hline
+100 & 0.201419\\
+\hline
+101 & 0.201303\\
+\hline
+102 & 0.200887\\
+\hline
+103 & 0.200047\\
+\hline
+104 & 0.194325\\
+\hline
+105 & 0.194209\\
+\hline
+106 & 0.193923\\
+\hline
+107 & 0.193621\\
+\hline
+108 & 0.191702\\
+\hline
+109 & 0.191443\\
+\hline
+110 & 0.190335\\
+\hline
+111 & 0.1868\\
+\hline
+112 & 0.141926\\
+\hline
+113 & 0.141675\\
+\hline
+114 & 0.141072\\
+\hline
+115 & 0.140496\\
+\hline
+116 & 0.137691\\
+\hline
+117 & 0.137414\\
+\hline
+118 & 0.136355\\
+\hline
+119 & 0.134076\\
+\hline
+120 & 0.109244\\
+\hline
+121 & 0.10857\\
+\hline
+122 & 0.106761\\
+\hline
+123 & 0.104782\\
+\hline
+124 & 0.0885931\\
+\hline
+125 & 0.0860933\\
+\hline
+126 & 0.0731135\\
+\hline
+127 & -1.64405e-16\\
+\hline
+128 & -1\\
+\hline
+129 & -1\\
+\hline
+130 & -1\\
+\hline
+131 & -1\\
+\hline
+132 & -1\\
+\hline
+133 & -1\\
+\hline
+134 & -1\\
+\hline
+135 & -1\\
+\hline
+136 & -1\\
+\hline
+137 & -1\\
+\hline
+138 & -1\\
+\hline
+139 & -1\\
+\hline
+140 & -1\\
+\hline
+141 & -1\\
+\hline
+142 & -1\\
+\hline
+143 & -1\\
+\hline
+144 & -1\\
+\hline
+145 & -1\\
+\hline
+146 & -1\\
+\hline
+147 & -1\\
+\hline
+148 & -1\\
+\hline
+149 & -1\\
+\hline
+150 & -1\\
+\hline
+151 & -1\\
+\hline
+152 & -1\\
+\hline
+153 & -1\\
+\hline
+154 & -1\\
+\hline
+155 & -1\\
+\hline
+156 & -1\\
+\hline
+157 & -1\\
+\hline
+158 & -1\\
+\hline
+159 & -1\\
+\hline
+160 & -1\\
+\hline
+161 & -1\\
+\hline
+162 & -1\\
+\hline
+163 & -1\\
+\hline
+164 & -1\\
+\hline
+165 & -1\\
+\hline
+166 & -1\\
+\hline
+167 & -1\\
+\hline
+168 & -1\\
+\hline
+169 & -1\\
+\hline
+170 & -1\\
+\hline
+171 & -1\\
+\hline
+172 & -1\\
+\hline
+173 & -1\\
+\hline
+174 & -1\\
+\hline
+175 & -1\\
+\hline
+176 & -1\\
+\hline
+177 & -1\\
+\hline
+178 & -1\\
+\hline
+179 & -1\\
+\hline
+180 & -1\\
+\hline
+181 & -1\\
+\hline
+182 & -1\\
+\hline
+183 & -1\\
+\hline
+184 & -1\\
+\hline
+185 & -1\\
+\hline
+186 & -1\\
+\hline
+187 & -1\\
+\hline
+188 & -1\\
+\hline
+189 & -1\\
+\hline
+190 & -1\\
+\hline
+191 & -1\\
+\hline
+192 & -1.36607\\
+\hline
+193 & -1.36622\\
+\hline
+194 & -1.36653\\
+\hline
+195 & -1.36682\\
+\hline
+196 & -1.36798\\
+\hline
+197 & -1.3681\\
+\hline
+198 & -1.36851\\
+\hline
+199 & -1.36935\\
+\hline
+200 & -1.37449\\
+\hline
+201 & -1.37462\\
+\hline
+202 & -1.37492\\
+\hline
+203 & -1.37523\\
+\hline
+204 & -1.37697\\
+\hline
+205 & -1.37724\\
+\hline
+206 & -1.37827\\
+\hline
+207 & -1.38161\\
+\hline
+208 & -1.41041\\
+\hline
+209 & -1.41078\\
+\hline
+210 & -1.41141\\
+\hline
+211 & -1.41202\\
+\hline
+212 & -1.41408\\
+\hline
+213 & -1.41438\\
+\hline
+214 & -1.41521\\
+\hline
+215 & -1.41708\\
+\hline
+216 & -1.42928\\
+\hline
+217 & -1.43\\
+\hline
+218 & -1.43128\\
+\hline
+219 & -1.43281\\
+\hline
+220 & -1.44015\\
+\hline
+221 & -1.44196\\
+\hline
+222 & -1.44803\\
+\hline
+223 & -1.48119\\
+\hline
+224 & -1.71174\\
+\hline
+225 & -1.72983\\
+\hline
+226 & -1.74429\\
+\hline
+227 & -1.7629\\
+\hline
+228 & -1.78415\\
+\hline
+229 & -1.79232\\
+\hline
+230 & -1.8036\\
+\hline
+231 & -1.83887\\
+\hline
+232 & -1.88464\\
+\hline
+233 & -1.89578\\
+\hline
+234 & -1.90544\\
+\hline
+235 & -1.92416\\
+\hline
+236 & -1.94887\\
+\hline
+237 & -1.96426\\
+\hline
+238 & -1.98859\\
+\hline
+239 & -2.18123\\
+\hline
+240 & -2.42899\\
+\hline
+241 & -2.49744\\
+\hline
+242 & -2.54087\\
+\hline
+243 & -2.64506\\
+\hline
+244 & -2.71489\\
+\hline
+245 & -2.76439\\
+\hline
+246 & -2.81846\\
+\hline
+247 & -3.29692\\
+\hline
+248 & -3.72092\\
+\hline
+249 & -3.95015\\
+\hline
+250 & -4.11005\\
+\hline
+251 & -5.0082\\
+\hline
+252 & -5.94709\\
+\hline
+253 & -7.56725\\
+\hline
+254 & -11.3311\\
+\hline
+\end{array}
+$$
+The energy is 403.991\\
+Eigenvalues: $\lambda_i$\\
+Laplace eigenvalues: $\theta_i$\\
+
+
+%\bibliographystyle{gerplain}% wird oben eingestellt
+%\addcontentsline{toc}{section}{References}
+%\bibliography{../MY_BIBLIOGRAPHY/anton}
+% ACHTUNG: nicht vergessen:
+% die Zeile
+%\addcontentsline{toc}{chapter}{Literaturverzeichnis}
+% muss per Hand in d.bbl eingefuegt werden !
+% nach \begin{thebibliography}{100}
+
+%\begin{theindex}
+
+%\clearpage
+%\addcontentsline{toc}{chapter}{Index}
+%\input{apd.ind}
+
+%\printindex
+%\end{theindex}
+
+}% allowdisplaybreaks
+
+\end{document}
+
+
